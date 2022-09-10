@@ -31,6 +31,7 @@ describe("Get Balance Use Case", () => {
     const statement = await createStatementUseCase.execute({
       user_id: user.id as string,
       type: "deposit" as any,
+      sender_id: null,
       amount: 100,
       description: "deposit"
     })

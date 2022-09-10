@@ -1,7 +1,6 @@
 import { InMemoryStatementsRepository } from "../../repositories/in-memory/InMemoryStatementsRepository";
 import { InMemoryUsersRepository } from "../../../users/repositories/in-memory/InMemoryUsersRepository";
 import { CreateStatementUseCase } from "../createStatement/CreateStatementUseCase";
-import { GetBalanceUseCase } from "../getBalance/GetBalanceUseCase";
 import { GetStatementOperationUseCase } from "./GetStatementOperationUseCase";
 import { CreateUserUseCase } from "../../../users/useCases/createUser/CreateUserUseCase";
 import { GetStatementOperationError } from "./GetStatementOperationError";
@@ -33,6 +32,7 @@ describe("Get Statement Operation Use Case", () => {
     const deposit = await createStatementUseCase.execute({
       user_id: user.id as string,
       type: "deposit" as any,
+      sender_id: null,
       amount: 100,
       description: "deposit"
     });

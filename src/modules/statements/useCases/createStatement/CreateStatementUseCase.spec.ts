@@ -27,6 +27,7 @@ describe("Create Statement Use Case", () => {
     const deposit = await createStatementUseCase.execute({
       user_id: user.id as string,
       type: "deposit" as any,
+      sender_id: null,
       amount: 100,
       description: "deposit"
     });
@@ -48,6 +49,7 @@ describe("Create Statement Use Case", () => {
     const deposit = await createStatementUseCase.execute({
       user_id: user.id as string,
       type: "deposit" as any,
+      sender_id: null,
       amount: 100,
       description: "deposit"
     });
@@ -55,6 +57,7 @@ describe("Create Statement Use Case", () => {
     const withdraw = await createStatementUseCase.execute({
       user_id: user.id as string,
       type: "withdraw" as any,
+      sender_id: null,
       amount: 50,
       description: "withdraw"
     })
@@ -83,6 +86,7 @@ describe("Create Statement Use Case", () => {
       await createStatementUseCase.execute({
         user_id: user.id as string,
         type: "withdraw" as any,
+        sender_id: null,
         amount: 50,
         description: "withdraw"
       })
@@ -94,6 +98,7 @@ describe("Create Statement Use Case", () => {
       await createStatementUseCase.execute({
         user_id: "non-existing-user-id",
         type: "deposit" as any,
+        sender_id: null,
         amount: 100,
         description: "deposit"
       });
